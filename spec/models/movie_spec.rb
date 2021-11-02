@@ -8,11 +8,11 @@ RSpec.describe Movie do
   describe 'instance methods' do
     before :each do
       @studio = Studio.create!(name: 'Walt Disney Studios', location: 'Burbank, CA')
-      @movie = @studio.movies.create!(title: 'Pirates of the Caribbean: The Curse of the Black Pearl', creation_year: 2003, genre: 'Fantasy')
+      @movie = @studio.movies.create(title: 'Pirates of the Caribbean: The Curse of the Black Pearl', creation_year: 2003, genre: 'Fantasy')
 
-      @actor_1 = @movie.actors.create!(name: 'Johnny Depp', age: 58)
-      @actor_2 = @movie.actors.create!(name: 'Keira Knightley', age: 36)
-      @actor_3 = @movie.actors.create!(name: 'Orlando Bloom', age: 44)
+      @actor_1 = @movie.actors.create(name: 'Johnny Depp', age: 58)
+      @actor_2 = @movie.actors.create(name: 'Keira Knightley', age: 36)
+      @actor_3 = @movie.actors.create(name: 'Orlando Bloom', age: 44)
     end
 
     describe '#actors_by_age' do

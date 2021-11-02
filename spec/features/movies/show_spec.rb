@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the movie show page' do
   describe 'as a user' do
     before :each do
-      @studio = Studio.create!(name: 'Walt Disney Studios', location: 'Burbank, CA')
+      @studio = Studio.create(name: 'Walt Disney Studios', location: 'Burbank, CA')
       @movie = @studio.movies.create(title: 'Pirates of the Caribbean: The Curse of the Black Pearl', creation_year: 2003, genre: 'Fantasy')
 
       @actor_1 = @movie.actors.create(name: 'Johnny Depp', age: 58)

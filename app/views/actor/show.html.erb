@@ -1,0 +1,13 @@
+<h1><%= @actor.name %></h1>
+<p>Age: <%= @actor.age %></p>
+
+<hr>
+
+<div id='costars'>
+<h2>Costars</h2>
+<ul>
+<% @actor.costars.each do |costar| %>
+  <li><%= costar.name %></li>
+<% end %>
+</ul>
+</div>
