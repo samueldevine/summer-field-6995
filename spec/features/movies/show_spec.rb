@@ -12,7 +12,7 @@ RSpec.describe 'the movie show page' do
     end
 
     it 'I see the movies title, creation year, and genre' do
-      visit movies_path(@movie)
+      visit movie_path(@movie)
 
       expect(page).to have_content @movie.title
       expect(page).to have_content @movie.creation_year
@@ -20,7 +20,7 @@ RSpec.describe 'the movie show page' do
     end
 
     it 'I see a list of all its actors from youngest to oldest' do
-      visit movies_path(@movie)
+      visit movie_path(@movie)
 
       # appear_before assertion defined by the orderly gem
       expect(@actor_2.name).to appear_before @actor_3.name
@@ -28,7 +28,7 @@ RSpec.describe 'the movie show page' do
     end
 
     it 'I see the average age of all the movies actors' do
-      visit movies_path(@movie)
+      visit movie_path(@movie)
 
       expect(page).to have_content 'Average Age of Actors: 46.0'
     end
