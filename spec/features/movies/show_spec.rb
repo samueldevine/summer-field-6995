@@ -54,10 +54,11 @@ RSpec.describe 'the movie show page' do
       actor_4 = Actor.create(name: 'George Clooney', age: 60)
 
       visit movie_path(@movie)
-      fill_in 'Name', with: actor_4.name
+      fill_in :name, with: actor_4.name
       click_on 'Submit'
 
       expect(current_path).to eq movie_path(@movie)
+
       expect(page).to have_content actor_4.name
     end
   end

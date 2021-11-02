@@ -1,6 +1,6 @@
 <h1><%= @movie.title %></h1>
-<p>Created in: <%= @movie.creation_year %></p>
-<p>Genre: <%= @movie.genre %></p>
+<p>Created in: <%= @movie.creation_year %><br>
+Genre: <%= @movie.genre %></p>
 
 <h2>Actors in this Movie</h2>
 <ul>
@@ -8,4 +8,14 @@
   <li><%= actor.name %> (<%= actor.age %>)</li>
 <% end %>
 </ul>
-Average Age of Actors: <%= @movie.average_age %>
+
+<p>Average Age of Actors: <%= @movie.average_age %></p>
+
+<div id='add-actor'>
+Add an actor to this movie:
+<%= form_with url: movie_path(@movie.id), method: :patch, local: true do |f| %>
+  <%= f.label :name, "Actor's name: " %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Submit' %>
+<% end %>
+</div>
